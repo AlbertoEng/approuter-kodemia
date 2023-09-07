@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Home from './pages/Home'
 import ListProducts from './pages/ListProducts'
 import ListUsers from './pages/ListUsers'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useEffect } from 'react'
+import Create from './pages/Create'
+
 
 function App() {
 
@@ -35,7 +37,10 @@ function App() {
         </nav>
         <Routes>
           <Route path='/products' element={<ListProducts />} />
-          <Route path='/users' element={<ListUsers />} />
+          <Route path='/users' element={<ListUsers />} >
+            <Route path='create' element={<Create />}/>
+            <Route path='listAll' element={<h1>Hola desde listAll</h1>}/>
+          </Route>
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>

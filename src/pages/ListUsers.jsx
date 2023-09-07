@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react'
+import { Outlet } from 'react-router-dom'
 
 const ListUsers = () => {
   const [listUsers, setListUsers] = useState([])
@@ -19,6 +20,7 @@ const ListUsers = () => {
         <div className="container">
             <div className='row'>
                 <div className="col">
+                    <Outlet />
                     <ul className="list-group">
                         {
                             listUsers.map(( user )=>{
